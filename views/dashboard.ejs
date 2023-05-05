@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Simple To-Do App</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+      <style>
+        body{
+          background-color: #3830a9;
+        }
+        h1{
+          color: white;
+          font-weight: 800;
+          font-size: 3rem;
+        }
+        .logout{
+          margin-top:1rem;
+        }
+        form{
+          border: none;
+        }
+      </style>
+    </head>
+    <body>
+      <div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="/">TodoApp</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="/register">Register</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/login">Login</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      <div class="container">
+        <h1 class="display-4 text-center py-1">To-Do App</h1>
+        
+        <div class="jumbotron p-3 shadow-sm">
+          <form id="create_form">
+            <div class="d-flex align-items-center">
+              <input id="create_field" name='todo' autofocus autocomplete="off" class="form-control mr-3" type="text" style="flex: 1;">
+              <button class="add_item btn btn-primary">Add New Item</button>
+            </div>
+          </form>
+        </div>
+        
+        <ul id="item_list" class=""list-group pb-5>
+
+        </ul>
+        <button class="show_more btn btn-light">
+          Show more
+        </button>
+        <br><br>
+      <form action='/logout' method="POST">
+        <button class="btn btn-light"> Logout <button>
+      </form>
+
+      <form action='/logout_from_all_devices' method="POST">
+        <button class="logout btn btn-light">Logout from all devices<button>
+      </form>
+
+      </div>
+    
+      <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+      <script src="/browser.js"> 
+      </script>
+      
+    </body>
+    </html>
+
